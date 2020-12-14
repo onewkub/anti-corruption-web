@@ -1,0 +1,32 @@
+@import '~antd/dist/antd.less';
+
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+
+}
+
+.App-Banner {
+  &:extend(.section);
+  background-color: #ffe5b9;
+}
+
+.App-Content {
+  &:extend(.section);
+  background-color: #eff8ff;
+}
+
+
+.App-About {
+  &:extend(.section);
+  background-color: #c9cbff;
+}
