@@ -1,7 +1,5 @@
-import React from 'react'
-
 function About() {
-  return <div className="App-About">Abount</div>
+  return <div className="App-About">About</div>
 }
 
 export default About
