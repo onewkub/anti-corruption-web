@@ -1,4 +1,11 @@
 @import '~antd/dist/antd.less';
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+
+@first-color: #8675a9;
+@second-color: #c3aed6;
+@third-color: #efbbcf;
+@fourth-color: #ffd5cd;
 
 .App {
   text-align: center;
@@ -11,21 +18,48 @@
 
 .section {
   height: 100vh;
+  // width: 100vw;
   scroll-snap-align: start;
-  padding: 0.8rem 0;
-
+  // padding: 0.8rem 1rem;
 }
 
 .App-Banner {
   &:extend(.section);
-  background-color: #ffe5b9;
+  background-image: linear-gradient(135deg, @first-color, @second-color);
+  font-family: 'Kanit', sans-serif;
+  display: flex;
+}
+
+.banner-title {
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+  color: #ffd5cd;
+  
+}
+
+.banner-img {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.banner-logo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .App-Content {
   &:extend(.section);
   background-color: #eff8ff;
 }
-
 
 .App-About {
   &:extend(.section);
