@@ -1,1 +1,1 @@
-export * from './messages'
+export const a = null

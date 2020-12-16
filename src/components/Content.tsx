@@ -1,26 +1,26 @@
-import { useEffect } from 'react'
-import { connect } from 'react-redux'
-import { RootState } from 'store/reducers'
+import { useSelector } from 'react-redux'
 import { IMessage } from 'models/message'
-import { GetMessages, getMessages } from 'services/MessagesService'
 import TimeAgo from 'javascript-time-ago'
 import th from 'javascript-time-ago/locale/th'
+import { useFirestoreConnect } from 'react-redux-firebase'
+import { RootState } from 'store/reducers'
 TimeAgo.addLocale(th)
-interface IProps {
-  messages: IMessage[]
-  loading: boolean
-  getMessages: GetMessages
-}
 
-function Content(props: IProps) {
-  const { messages, loading, getMessages } = props
+function Content() {
   const timeAgo = new TimeAgo('th-TH')
-  useEffect(() => {
-    getMessages()
-    // eslint-disable-next-line
-  }, [])
 
-  if (loading) {
+  useFirestoreConnect([{ collection: 'messages' }])
+
+  const messages: IMessage[] = useSelector(
+    (state: RootState) => state.firestore.ordered.messages,
+  )
+
+  const handleOnClick = (item: any) => {
+    console.log(item)
+  }
+
+  console.log(messages)
+  if (!messages) {
     return (
       <div className="App-Content">
         <h5>Loading....</h5>
@@ -32,11 +32,12 @@ function Content(props: IProps) {
     <div className="App-Content">
       <h1 style={{ textTransform: 'uppercase' }}>Answer Board</h1>
       <div className="answer-board">
-        {messages.map((item, index) => (
-          <div className="card">
+        {messages.map((item: IMessage, index: number) => (
+          <div key={index} className="card">
             <h5>{item.message}</h5>
             <h6>Owner: {item.writer}</h6>
-            <h6>Write at: {timeAgo.format(item.created)}</h6>
+            <h6>Write at: {timeAgo.format(item.created.toDate())}</h6>
+            <button onClick={() => handleOnClick(item)}>Click</button>
           </div>
         ))}
       </div>
@@ -44,9 +45,4 @@ function Content(props: IProps) {
   )
 }
 
-const mapStateToProps = (rootState: RootState) => ({
-  messages: rootState.messages.data,
-  loading: rootState.messages.loading,
-})
-
-export default connect(mapStateToProps, { getMessages })(Content)
+export default Content

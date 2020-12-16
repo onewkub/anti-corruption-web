@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux'
-import messages from './messages'
+import { firestoreReducer } from 'redux-firestore'
+import { firebaseReducer } from 'react-redux-firebase'
 
-const rootReducer = combineReducers({ messages })
+const rootReducer = combineReducers({
+  firebase: firebaseReducer,
+  firestore: firestoreReducer,
+})
 
 export type RootState = ReturnType<typeof rootReducer>
 
