@@ -1,6 +1,5 @@
 import firebase from 'firebase'
 import 'firebase/storage'
-// import { IMessage } from 'models/message'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCVBBo-1hzJRtkeeyz4Z30lGkWJUcUPsao',
@@ -14,20 +13,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
-
-// let messageCollection = db.collection('messages')
-
-// export async function getMessages() {
-//   try {
-//     const recivedData = await messageCollection.get()
-//     const rlt = recivedData.forEach((doc) => ({ id: doc.id, data: doc.data() }))
-//     return rlt
-//     // console.log(rlt)
-//   } catch (error) {
-//     console.error(error)
-//   }
-// }
 export let db = firebase.firestore()
-
 
 export default firebase
