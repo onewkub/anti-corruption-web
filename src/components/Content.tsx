@@ -4,7 +4,13 @@ import TimeAgo from 'javascript-time-ago'
 import th from 'javascript-time-ago/locale/th'
 import { useFirestoreConnect } from 'react-redux-firebase'
 import { RootState } from 'store/reducers'
+import AddComment from './Add-Comment'
+
+import { Typography } from 'antd'
+
 TimeAgo.addLocale(th)
+
+const { Title } = Typography
 
 function Content() {
   const timeAgo = new TimeAgo('th-TH')
@@ -23,23 +29,26 @@ function Content() {
   if (!messages) {
     return (
       <div className="App-Content">
-        <h5>Loading....</h5>
+        <Title>Loading....</Title>
       </div>
     )
   }
 
   return (
     <div className="App-Content">
-      <h1 style={{ textTransform: 'uppercase' }}>Answer Board</h1>
+      <Title style={{ textTransform: 'uppercase' }}>กระดานรวบรวมความเห็น</Title>
       <div className="answer-board">
         {messages.map((item: IMessage, index: number) => (
           <div key={index} className="card">
-            <h5>{item.message}</h5>
-            <h6>Owner: {item.writer}</h6>
-            <h6>Write at: {timeAgo.format(item.created.toDate())}</h6>
+            <h2>{item.message}</h2>
+            <h3>Owner: {item.writer}</h3>
+            <h4>Write at: {timeAgo.format(item.created.toDate())}</h4>
             <button onClick={() => handleOnClick(item)}>Click</button>
           </div>
         ))}
+      </div>
+      <div>
+        <AddComment />
       </div>
     </div>
   )
