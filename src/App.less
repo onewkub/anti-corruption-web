@@ -7,7 +7,7 @@
 @fourth-color: #ffd5cd;
 
 .App {
-  text-align: center;
+  // text-align: center;
   height: 100vh;
   width: 100vw;
   overflow: auto;
@@ -55,7 +55,13 @@
 
 .App-Content {
   &:extend(.section);
+  text-align: center;
   background-color: #eff8ff;
+}
+
+.App-Content .comment-card{
+  text-align: left;
+  // height: 300px;
 }
 
 .App-About {
@@ -63,7 +69,14 @@
   background-color: #c9cbff;
 }
 
+.comment-zone{
+  // background-color: red;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .comment-box {
   width: 30rem;
   height: 40rem;
+  text-align: left;
 }

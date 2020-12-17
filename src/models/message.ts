@@ -1,7 +1,7 @@
 export interface IMessage {
-  id: string
+  id?: string
   message: string
   writer: string
-  created: any
+  created?: any
   deleteCode: string
 }
