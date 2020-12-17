@@ -5,26 +5,36 @@ import th from 'javascript-time-ago/locale/th'
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 import { RootState } from 'store/reducers'
 import AddComment from './Add-Comment'
-
 import { Typography, Card, Row, Col, Button } from 'antd'
+import DeleteModal from './DeleteModal'
+import { useState } from 'react'
 
 TimeAgo.addLocale(th)
 
 const { Title } = Typography
-
 function Content() {
   const timeAgo = new TimeAgo('th-TH')
 
+  const [deleteModal, setDeleteModal] = useState<boolean>(false)
+
+  const [selected, setSelected] = useState<IMessage | undefined>(undefined)
+
   useFirestoreConnect<IMessage[]>([
-    { collection: 'messages', orderBy: ['created', 'desc'], limit: 9 },
+    { collection: 'messages', orderBy: ['created', 'desc'], limit: 8 },
   ])
 
   const messages: IMessage[] = useSelector(
     (state: RootState) => state.firestore.ordered.messages,
   )
 
-  const handleOnClick = (item: any) => {
-    console.log(item)
+  const handleOnClickDelete = (item: IMessage) => {
+    setSelected(item)
+    setDeleteModal(true)
+  }
+
+  const closeDialog = () => {
+    setDeleteModal(false)
+    setSelected(undefined)
   }
 
   if (!isLoaded(messages)) {
@@ -56,7 +66,7 @@ function Content() {
                   size="small"
                   type="link"
                   danger
-                  onClick={() => handleOnClick(item)}
+                  onClick={() => handleOnClickDelete(item)}
                 >
                   ลบข้อความ
                 </Button>
@@ -79,6 +89,11 @@ function Content() {
       <div className="comment-zone">
         <AddComment />
       </div>
+      <DeleteModal
+        open={deleteModal}
+        message={selected}
+        closeDialog={closeDialog}
+      />
     </div>
   )
 }

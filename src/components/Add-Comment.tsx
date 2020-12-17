@@ -3,10 +3,10 @@ import { IMessage } from 'models/message'
 import { useState } from 'react'
 import { useFirestore } from 'react-redux-firebase'
 
-import bcrypt from 'bcryptjs'
+// import bcrypt from 'bcryptjs'
+import { comparePassword, hashPassword } from 'services/BcryptService'
 
 const { Title } = Typography
-
 function AddComment() {
   const [form, setForm] = useState<IMessage>({
     writer: '',
@@ -30,10 +30,16 @@ function AddComment() {
   const handleOnClick = async () => {
     try {
       let comment = { ...form, created: new Date() }
-      const salt = await bcrypt.genSalt(10)
-      const hash = await bcrypt.hash(comment.deleteCode, salt)
+      console.log(comment)
+      const hash = await hashPassword(form.deleteCode)
       comment = { ...comment, deleteCode: hash }
+
+      const rlt = await comparePassword(form.deleteCode, hash)
+
+      console.log('compare status: ',rlt)
+
       await firestore.collection('messages').doc().set(comment)
+
       setForm({
         writer: '',
         message: '',
