@@ -11,6 +11,7 @@ import {
   ReactReduxFirebaseProvider,
   ReactReduxFirebaseProviderProps,
 } from 'react-redux-firebase'
+import VideoContent from 'components/VideoContent'
 
 const rrfConfig = {
   userProfile: 'users',
@@ -30,6 +31,7 @@ function App() {
       <ReactReduxFirebaseProvider {...rrfProps}>
         <div className="App">
           <HomeComponent />
+          <VideoContent />
           <ContentComponent />
           <AboutComponent />
         </div>

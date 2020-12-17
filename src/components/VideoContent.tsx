@@ -1,0 +1,13 @@
+import { Typography } from 'antd'
+
+const { Title } = Typography
+
+function VideoContent() {
+  return (
+    <div className="App-Video-content">
+      <Title>วีดีโอสัมภาษณ์ความเห็นนักศึกษา คณะเกตรศาสตร์</Title>
+    </div>
+  )
+}
+
+export default VideoContent

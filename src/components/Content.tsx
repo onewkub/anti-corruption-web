@@ -16,7 +16,7 @@ function Content() {
   const timeAgo = new TimeAgo('th-TH')
 
   useFirestoreConnect<IMessage[]>([
-    { collection: 'messages', orderBy: ['created', 'desc'], limit: 20},
+    { collection: 'messages', orderBy: ['created', 'desc'], limit: 9 },
   ])
 
   const messages: IMessage[] = useSelector(
@@ -45,8 +45,8 @@ function Content() {
           <Col
             xs={24}
             sm={12}
-            md={6}
-            xl={4}
+            md={8}
+            lg={6}
             key={index}
             className="comment-card"
           >
@@ -55,12 +55,16 @@ function Content() {
                 <Button
                   size="small"
                   type="link"
+                  danger
                   onClick={() => handleOnClick(item)}
                 >
-                  Delete
+                  ลบข้อความ
                 </Button>
               </div>
-              <Title level={4}>" {item.message} "</Title>
+              <div style={{ minHeight: 180 }}>
+                <Title level={4}>" {item.message} "</Title>
+              </div>
+
               <div style={{ textAlign: 'right' }}>
                 <label>
                   เขียนโดย <b>{item.writer}</b>

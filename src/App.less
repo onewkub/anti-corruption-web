@@ -17,8 +17,8 @@
 }
 
 .section {
-  height: 100vh;
-  padding: 1rem;
+  min-height: 100vh;
+  padding: 2rem;
   // width: 100vw;
   scroll-snap-align: start;
   // padding: 0.8rem 1rem;
@@ -26,7 +26,7 @@
 
 .App-Banner {
   &:extend(.section);
-  background-image: linear-gradient(135deg, @first-color, @second-color);
+  background-image: linear-gradient(@first-color, @second-color);
   display: flex;
 }
 
@@ -56,20 +56,26 @@
 .App-Content {
   &:extend(.section);
   text-align: center;
-  background-color: #eff8ff;
+  background-image: linear-gradient(@third-color, @fourth-color);
 }
 
-.App-Content .comment-card{
+.App-Video-content {
+  &:extend(.section);
+  text-align: center;
+  background-image: linear-gradient(@second-color, @third-color);
+}
+
+.App-Content .comment-card {
   text-align: left;
   // height: 300px;
 }
 
 .App-About {
   &:extend(.section);
-  background-color: #c9cbff;
+  background-image: linear-gradient(@fourth-color, @first-color);
 }
 
-.comment-zone{
+.comment-zone {
   // background-color: red;
   display: flex;
   justify-content: flex-end;
@@ -77,6 +83,9 @@
 
 .comment-box {
   width: 30rem;
-  height: 40rem;
   text-align: left;
+}
+
+.asnwer-board {
+  height: 80%;
 }
