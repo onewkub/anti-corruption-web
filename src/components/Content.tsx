@@ -56,7 +56,7 @@ function Content() {
   }
 
   return (
-    <div className="App-Content">
+    <div className="App-Content" id="comment">
       <Title style={{ textTransform: 'uppercase' }}>
         ความเห็นเกี่ยวกับการทุจริต
       </Title>

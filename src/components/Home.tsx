@@ -1,6 +1,7 @@
 import Banner from 'assets/banner.png'
 import NotFoundImage from 'assets/not-found-image.jpg'
-import { Row, Col, Typography, Image } from 'antd'
+import { Row, Col, Typography, Image, Button } from 'antd'
+import { CommentOutlined, VideoCameraOutlined } from '@ant-design/icons'
 
 const { Title } = Typography
 
@@ -22,6 +23,36 @@ function Home() {
         <Title className="banner-title">Anti Corruption</Title>
         <Title level={3}>มุมมอง และ ความหมาย ของการทุตริต</Title>
         <Title level={4}>Chiangmai University</Title>
+        <div style={{ padding: '24px 0' }}>
+          <Button
+            size="large"
+            type="primary"
+            style={{ marginBottom: 6, width: 180 }}
+            danger
+            icon={<VideoCameraOutlined />}
+            onClick={() =>
+              document
+                .getElementById('video')
+                ?.scrollIntoView({ behavior: 'smooth' })
+            }
+          >
+            ดูวีดีโอ
+          </Button>
+          <br />
+          <Button
+            size="large"
+            type="primary"
+            style={{ width: 180 }}
+            icon={<CommentOutlined />}
+            onClick={() =>
+              document
+                .getElementById('comment')
+                ?.scrollIntoView({ behavior: 'smooth' })
+            }
+          >
+            แสดงความคิดเห็น
+          </Button>
+        </div>
       </Col>
     </Row>
   )
