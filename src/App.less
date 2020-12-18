@@ -1,23 +1,24 @@
 @import '~antd/dist/antd.less';
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
-
 @first-color: #8675a9;
 @second-color: #c3aed6;
 @third-color: #efbbcf;
 @fourth-color: #ffd5cd;
 
 .App {
-  text-align: center;
+  // text-align: center;
   height: 100vh;
   width: 100vw;
   overflow: auto;
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory;
+  font-family: 'Kanit', sans-serif;
 }
 
 .section {
-  height: 100vh;
+  // min-height: 100vh;
+  padding: 2rem;
   // width: 100vw;
   scroll-snap-align: start;
   // padding: 0.8rem 1rem;
@@ -25,18 +26,17 @@
 
 .App-Banner {
   &:extend(.section);
-  background-image: linear-gradient(135deg, @first-color, @second-color);
-  font-family: 'Kanit', sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(@first-color, @second-color);
   display: flex;
 }
 
 .banner-title {
-  font-weight: bold;
-  font-size: 3rem;
-  margin: 0;
+  font-size: 5rem !important;
+  text-shadow: 4px 4px @second-color;
+  margin: 0 !important;
   text-transform: uppercase;
-  color: #ffd5cd;
-  
+  color: @fourth-color !important;
 }
 
 .banner-img {
@@ -47,7 +47,7 @@
 .banner-content {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: right;
   justify-content: center;
 }
 .banner-logo {
@@ -58,10 +58,79 @@
 
 .App-Content {
   &:extend(.section);
-  background-color: #eff8ff;
+  min-height: 100vh;
+  text-align: center;
+  background-image: linear-gradient(@third-color, @fourth-color);
+}
+
+.App-Video-content {
+  &:extend(.section);
+  min-height: 100vh;
+  text-align: center;
+  background-image: linear-gradient(@second-color, @third-color);
+}
+
+.App-Content .comment-card {
+  text-align: left;
+  // min-height: 240px;
 }
 
 .App-About {
   &:extend(.section);
-  background-color: #c9cbff;
+  min-height: 100vh;
+  background-image: linear-gradient(@fourth-color, @third-color);
+}
+
+.comment-zone {
+  // background-color: red;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-box {
+  width: 30rem;
+  text-align: left;
+}
+
+.answer-board {
+  min-height: 60vh;
+}
+
+.video-box {
+  max-width: 1280px;
+  min-height: 720px;
+  background-color: @fourth-color;
+  border: 0.5rem solid @fourth-color;
+  border-radius: 0.5rem;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.delete-modal {
+  font-family: 'Kanit', sans-serif;
+}
+
+.delete-modal-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-card {
+  font-family: 'Kanit', sans-serif;
+  min-height: 24rem;
+}
+.profile-image {
+  height: 100%;
+  object-fit: contain;
+}
+
+.App-Footer {
+  &:extend(.section);
+  height: 6rem;
+  background-color: @first-color;
+  // color: white;
+  text-align: center;
 }
