@@ -20,7 +20,7 @@ function VideoContent() {
     // return 'abc'
   })
 
-  if (!isLoaded(youtube_id) || !youtube_id) {
+  if (!isLoaded(youtube_id)) {
     return (
       <div className="App-Video-content" id="video">
         <Title>Loading...</Title>
@@ -33,6 +33,7 @@ function VideoContent() {
       <Title>
         วีดีโอสัมภาษณ์ความเห็นนักศึกษา คณะเกตรศาสตร์ มหาวิทยาลัยเชียงใหม่
       </Title>
+      
       <YouTube className="video-box" videoId={youtube_id} opts={opts} />
     </div>
   )
