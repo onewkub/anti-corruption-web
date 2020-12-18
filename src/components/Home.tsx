@@ -1,5 +1,6 @@
 import Banner from 'assets/banner.png'
-import { Row, Col, Typography } from 'antd'
+import NotFoundImage from 'assets/not-found-image.jpg'
+import { Row, Col, Typography, Image } from 'antd'
 
 const { Title } = Typography
 
@@ -7,7 +8,15 @@ function Home() {
   return (
     <Row className="App-Banner">
       <Col xs={24} sm={24} md={14} className="banner-logo">
-        <img className="banner-img" src={Banner} alt="banner of site" />
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Image
+            className="banner-img"
+            src={Banner}
+            alt="banner of site"
+            preview={false}
+            fallback={NotFoundImage}
+          />
+        </div>
       </Col>
       <Col xs={24} sm={24} md={10} className="banner-content">
         <Title className="banner-title">Anti Corruption</Title>

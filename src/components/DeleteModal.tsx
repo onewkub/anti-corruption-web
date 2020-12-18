@@ -1,6 +1,6 @@
 import { Input, Modal, Typography, Form, Button } from 'antd'
 import { IMessage } from 'models/message'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { comparePassword } from 'services/BcryptService'
 import { useFirestore } from 'react-redux-firebase'
 import { ValidateStatus } from 'antd/lib/form/FormItem'
@@ -22,6 +22,18 @@ function DeleteModal(props: IProps) {
   const [timer, setTimer] = useState<boolean>(false)
   const [secondToGo, setSecondToGo] = useState<number>(3)
 
+  let timeout: NodeJS.Timeout
+  let _timer: NodeJS.Timeout
+
+  useEffect(() => {
+    console.log('Load Modal')
+    return () => {
+      clearTimeout(timeout)
+      clearInterval(_timer)
+    }
+    // eslint-disable-next-line
+  }, [])
+
   const handleOnOk = async (value: { password: string }) => {
     const { password } = value
     if (!password || password === '') {
@@ -38,12 +50,12 @@ function DeleteModal(props: IProps) {
           setValidateStatus('success')
           console.log('Delete Success')
           setTimer(true)
-          const timer = setInterval(() => {
+          _timer = setInterval(() => {
             setSecondToGo((prev) => prev - 1)
           }, 1000)
-          setTimeout(() => {
-            clearInterval(timer)
-            handleOnCancel()
+          timeout = setTimeout(() => {
+            clearInterval(_timer)
+            closeDialog()
           }, secondToGo * 1000)
         } catch (error) {
           console.error(error)
@@ -60,16 +72,16 @@ function DeleteModal(props: IProps) {
   }
 
   const handleOnCancel = () => {
-    closeDialog()
     setTimer(false)
     setSecondToGo(3)
     setValidateStatus('')
+    closeDialog()
     form.resetFields()
   }
 
   const handleOnChange = (value: { password: string }) => {
     const { password } = value
-    console.log(value)
+    // console.log(value)
     if (!password || password === '') {
       setValidateStatus('error')
       setHelp('กรุณาใส่รหัสผ่านสำหรับลบความเห็น')

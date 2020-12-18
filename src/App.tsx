@@ -3,6 +3,7 @@ import './App.less'
 import HomeComponent from 'components/Home'
 import ContentComponent from 'components/Content'
 import AboutComponent from 'components/About'
+import Footer from 'components/Footer'
 import firebase from 'services/FirebaseService'
 import { Provider } from 'react-redux'
 import store from 'store'
@@ -34,6 +35,7 @@ function App() {
           <VideoContent />
           <ContentComponent />
           <AboutComponent />
+          <Footer />
         </div>
       </ReactReduxFirebaseProvider>
     </Provider>

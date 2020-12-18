@@ -19,8 +19,18 @@ function Content() {
 
   const [selected, setSelected] = useState<IMessage | undefined>(undefined)
 
+  const [page, setPage] = useState<number>(0)
+
+  const handleNextPage = () => {
+    setPage((prev) => prev + 1)
+  }
+
+  const handleBackPage = () => {
+    setPage((prev) => prev - 1)
+  }
+
   useFirestoreConnect<IMessage[]>([
-    { collection: 'messages', orderBy: ['created', 'desc'], limit: 8 },
+    { collection: 'messages', orderBy: ['created', 'desc'] },
   ])
 
   const messages: IMessage[] = useSelector(
@@ -52,50 +62,70 @@ function Content() {
       </Title>
       <div className="answer-board">
         <Row gutter={[8, 16]}>
-          {messages.map((item: IMessage, index: number) => (
-            <Col
-              xs={24}
-              sm={12}
-              md={8}
-              lg={6}
-              key={index}
-              className="comment-card"
-            >
-              <Card style={{ height: '100%' }}>
-                <div style={{ textAlign: 'right' }}>
-                  <Button
-                    size="small"
-                    type="link"
-                    danger
-                    onClick={() => handleOnClickDelete(item)}
-                  >
-                    ลบข้อความ
-                  </Button>
-                </div>
-                <div style={{ minHeight: 180 }}>
-                  <Title level={4}>" {item.message} "</Title>
-                </div>
+          {messages
+            .slice(page * 8, (page + 1) * 8)
+            .map((item: IMessage, index: number) => (
+              <Col
+                xs={24}
+                sm={12}
+                md={8}
+                lg={6}
+                key={index}
+                className="comment-card"
+              >
+                <Card style={{ height: '100%' }}>
+                  <div style={{ textAlign: 'right' }}>
+                    <Button
+                      size="small"
+                      type="link"
+                      danger
+                      onClick={() => handleOnClickDelete(item)}
+                    >
+                      ลบข้อความ
+                    </Button>
+                  </div>
+                  <div style={{ minHeight: 180 }}>
+                    <Title level={4}>" {item.message} "</Title>
+                  </div>
 
-                <div style={{ textAlign: 'right' }}>
-                  <label>
-                    เขียนโดย <b>{item.writer}</b>
-                  </label>
-                  <br />
-                  <label>{timeAgo.format(item.created.toDate())}</label>
-                </div>
-              </Card>
-            </Col>
-          ))}
+                  <div style={{ textAlign: 'right' }}>
+                    <label>
+                      เขียนโดย <b>{item.writer}</b>
+                    </label>
+                    <br />
+                    <label>{timeAgo.format(item.created.toDate())}</label>
+                  </div>
+                </Card>
+              </Col>
+            ))}
         </Row>
+        <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+          <div>
+            {page > 0 && (
+              <Button type="link" onClick={handleBackPage}>
+                Back
+              </Button>
+            )}
+          </div>
+          <div>
+            {messages.length > (page + 1) * 8 && (
+              <Button type="link" onClick={handleNextPage}>
+                Next
+              </Button>
+            )}
+          </div>
+        </div>
       </div>
       <div className="comment-zone">
         <AddComment />
       </div>
-      <DeleteModal
-        open={deleteModal}
-        message={selected}
-        closeDialog={closeDialog}
-      />
+      {deleteModal && (
+        <DeleteModal
+          open={deleteModal}
+          message={selected}
+          closeDialog={closeDialog}
+        />
+      )}
     </div>
   )
 }

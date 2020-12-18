@@ -17,7 +17,7 @@
 }
 
 .section {
-  min-height: 100vh;
+  // min-height: 100vh;
   padding: 2rem;
   // width: 100vw;
   scroll-snap-align: start;
@@ -26,6 +26,7 @@
 
 .App-Banner {
   &:extend(.section);
+  min-height: 100vh;
   background-image: linear-gradient(@first-color, @second-color);
   display: flex;
 }
@@ -57,23 +58,26 @@
 
 .App-Content {
   &:extend(.section);
+  min-height: 100vh;
   text-align: center;
   background-image: linear-gradient(@third-color, @fourth-color);
 }
 
 .App-Video-content {
   &:extend(.section);
+  min-height: 100vh;
   text-align: center;
   background-image: linear-gradient(@second-color, @third-color);
 }
 
 .App-Content .comment-card {
   text-align: left;
-  // height: 300px;
+  // min-height: 240px;
 }
 
 .App-About {
   &:extend(.section);
+  min-height: 100vh;
   background-image: linear-gradient(@fourth-color, @third-color);
 }
 
@@ -112,4 +116,21 @@
 .delete-modal-action {
   display: flex;
   justify-content: flex-end;
+}
+
+.profile-card {
+  font-family: 'Kanit', sans-serif;
+  min-height: 24rem;
+}
+.profile-image {
+  height: 100%;
+  object-fit: contain;
+}
+
+.App-Footer {
+  &:extend(.section);
+  height: 6rem;
+  background-color: @first-color;
+  // color: white;
+  text-align: center;
 }
