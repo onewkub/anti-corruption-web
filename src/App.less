@@ -31,9 +31,11 @@
 }
 
 .banner-title {
+  font-size: 5rem !important;
+  text-shadow: 4px 4px @second-color;
   margin: 0 !important;
   text-transform: uppercase;
-  color: #ffd5cd !important;
+  color: @fourth-color !important;
 }
 
 .banner-img {
@@ -72,7 +74,7 @@
 
 .App-About {
   &:extend(.section);
-  background-image: linear-gradient(@fourth-color, @first-color);
+  background-image: linear-gradient(@fourth-color, @third-color);
 }
 
 .comment-zone {
@@ -86,8 +88,8 @@
   text-align: left;
 }
 
-.asnwer-board {
-  height: 80%;
+.answer-board {
+  min-height: 60vh;
 }
 
 .video-box {
@@ -103,7 +105,11 @@
   justify-content: center;
 }
 
-
-.delete-modal{
+.delete-modal {
   font-family: 'Kanit', sans-serif;
+}
+
+.delete-modal-action {
+  display: flex;
+  justify-content: flex-end;
 }
