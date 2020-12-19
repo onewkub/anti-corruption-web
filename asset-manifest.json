@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.cf4cf3e4.chunk.css",
-    "main.js": "/static/js/main.3ad4ef2d.chunk.js",
-    "main.js.map": "/static/js/main.3ad4ef2d.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.c24e3fc9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.c24e3fc9.js.map",
-    "static/js/2.925a66da.chunk.js": "/static/js/2.925a66da.chunk.js",
-    "static/js/2.925a66da.chunk.js.map": "/static/js/2.925a66da.chunk.js.map",
-    "static/js/3.8964c627.chunk.js": "/static/js/3.8964c627.chunk.js",
-    "static/js/3.8964c627.chunk.js.map": "/static/js/3.8964c627.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.cf4cf3e4.chunk.css.map": "/static/css/main.cf4cf3e4.chunk.css.map",
-    "static/js/2.925a66da.chunk.js.LICENSE.txt": "/static/js/2.925a66da.chunk.js.LICENSE.txt",
-    "static/media/banner.3a9d2536.png": "/static/media/banner.3a9d2536.png",
-    "static/media/not-found-image.302ec864.jpg": "/static/media/not-found-image.302ec864.jpg"
+    "main.css": "/anti-corruption/static/css/main.4541479d.chunk.css",
+    "main.js": "/anti-corruption/static/js/main.d0277d23.chunk.js",
+    "main.js.map": "/anti-corruption/static/js/main.d0277d23.chunk.js.map",
+    "runtime-main.js": "/anti-corruption/static/js/runtime-main.1193a9a5.js",
+    "runtime-main.js.map": "/anti-corruption/static/js/runtime-main.1193a9a5.js.map",
+    "static/js/2.2183f11b.chunk.js": "/anti-corruption/static/js/2.2183f11b.chunk.js",
+    "static/js/2.2183f11b.chunk.js.map": "/anti-corruption/static/js/2.2183f11b.chunk.js.map",
+    "static/js/3.8964c627.chunk.js": "/anti-corruption/static/js/3.8964c627.chunk.js",
+    "static/js/3.8964c627.chunk.js.map": "/anti-corruption/static/js/3.8964c627.chunk.js.map",
+    "index.html": "/anti-corruption/index.html",
+    "static/css/main.4541479d.chunk.css.map": "/anti-corruption/static/css/main.4541479d.chunk.css.map",
+    "static/js/2.2183f11b.chunk.js.LICENSE.txt": "/anti-corruption/static/js/2.2183f11b.chunk.js.LICENSE.txt",
+    "static/media/banner.3a9d2536.png": "/anti-corruption/static/media/banner.3a9d2536.png",
+    "static/media/not-found-image.302ec864.jpg": "/anti-corruption/static/media/not-found-image.302ec864.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c24e3fc9.js",
-    "static/js/2.925a66da.chunk.js",
-    "static/css/main.cf4cf3e4.chunk.css",
-    "static/js/main.3ad4ef2d.chunk.js"
+    "static/js/runtime-main.1193a9a5.js",
+    "static/js/2.2183f11b.chunk.js",
+    "static/css/main.4541479d.chunk.css",
+    "static/js/main.d0277d23.chunk.js"
   ]
 }
