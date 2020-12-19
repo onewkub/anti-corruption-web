@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/anti-corruption/static/css/main.4541479d.chunk.css",
+    "main.css": "/anti-corruption/static/css/main.ba6e83c0.chunk.css",
     "main.js": "/anti-corruption/static/js/main.d0277d23.chunk.js",
     "main.js.map": "/anti-corruption/static/js/main.d0277d23.chunk.js.map",
     "runtime-main.js": "/anti-corruption/static/js/runtime-main.1193a9a5.js",
@@ -10,7 +10,7 @@
     "static/js/3.8964c627.chunk.js": "/anti-corruption/static/js/3.8964c627.chunk.js",
     "static/js/3.8964c627.chunk.js.map": "/anti-corruption/static/js/3.8964c627.chunk.js.map",
     "index.html": "/anti-corruption/index.html",
-    "static/css/main.4541479d.chunk.css.map": "/anti-corruption/static/css/main.4541479d.chunk.css.map",
+    "static/css/main.ba6e83c0.chunk.css.map": "/anti-corruption/static/css/main.ba6e83c0.chunk.css.map",
     "static/js/2.2183f11b.chunk.js.LICENSE.txt": "/anti-corruption/static/js/2.2183f11b.chunk.js.LICENSE.txt",
     "static/media/banner.3a9d2536.png": "/anti-corruption/static/media/banner.3a9d2536.png",
     "static/media/not-found-image.302ec864.jpg": "/anti-corruption/static/media/not-found-image.302ec864.jpg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.1193a9a5.js",
     "static/js/2.2183f11b.chunk.js",
-    "static/css/main.4541479d.chunk.css",
+    "static/css/main.ba6e83c0.chunk.css",
     "static/js/main.d0277d23.chunk.js"
   ]
 }
