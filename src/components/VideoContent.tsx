@@ -15,12 +15,12 @@ function VideoContent() {
     { collection: 'videos', doc: 'youtube_id' },
   ])
   const youtube_id: string = useSelector((state: RootState) => {
-    console.log(state.firestore.data.videos?.youtube_id.id)
+    // console.log(state.firestore.data.videos?.youtube_id.id)
     return state.firestore.data.videos?.youtube_id.id
     // return 'abc'
   })
 
-  if (!isLoaded(youtube_id) || !youtube_id) {
+  if (!isLoaded(youtube_id)) {
     return (
       <div className="App-Video-content" id="video">
         <Title>Loading...</Title>
@@ -33,6 +33,7 @@ function VideoContent() {
       <Title>
         วีดีโอสัมภาษณ์ความเห็นนักศึกษา คณะเกตรศาสตร์ มหาวิทยาลัยเชียงใหม่
       </Title>
+      
       <YouTube className="video-box" videoId={youtube_id} opts={opts} />
     </div>
   )
