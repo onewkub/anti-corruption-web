@@ -33,8 +33,11 @@ function VideoContent() {
       <Title>
         วีดีโอสัมภาษณ์ความเห็นนักศึกษา คณะเกตรศาสตร์ มหาวิทยาลัยเชียงใหม่
       </Title>
-      
-      <YouTube className="video-box" videoId={youtube_id} opts={opts} />
+      <div className="video-box">
+        <div className="video-sub-box">
+          <YouTube className="video-player" videoId={youtube_id} opts={opts} />
+        </div>
+      </div>
     </div>
   )
 }
