@@ -11,8 +11,8 @@
   height: 100vh;
   width: 100vw;
   overflow: auto;
-  scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory;
+  // scroll-snap-points-y: repeat(100vh);
+  // scroll-snap-type: y mandatory;
   font-family: 'Kanit', sans-serif;
 }
 
@@ -20,7 +20,7 @@
   // min-height: 100vh;
   padding: 2rem;
   // width: 100vw;
-  scroll-snap-align: start;
+  // scroll-snap-align: start;
   // padding: 0.8rem 1rem;
 }
 
@@ -32,11 +32,16 @@
 }
 
 .banner-title {
-  font-size: 5rem !important;
+  font-size: 4rem;
+  white-space: nowrap;
   text-shadow: 4px 4px @second-color;
   margin: 0 !important;
   text-transform: uppercase;
   color: @fourth-color !important;
+}
+
+.banner-subtitle {
+  white-space: nowrap;
 }
 
 .banner-img {
@@ -47,7 +52,7 @@
 .banner-content {
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: center;
   justify-content: center;
 }
 .banner-logo {
@@ -132,15 +137,32 @@
 
 .video-box {
   max-width: 1280px;
-  min-height: 720px;
+  max-height: 720px;
+
   background-color: @fourth-color;
   border: 0.5rem solid @fourth-color;
-  border-radius: 0.5rem;
+  // border-radius: 0.5rem;
   margin: 32px auto;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // text-align: center;
+  // justify-content: center;
+}
+
+.video-sub-box {
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.video-player {
+  position: absolute;
+  max-width: 1264px;
+  max-height: 704px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .delete-modal {
@@ -163,7 +185,7 @@
 
 .App-Footer {
   &:extend(.section);
-  height: 6rem;
+  min-height: 6rem;
   background-color: @first-color;
   // color: white;
   text-align: center;

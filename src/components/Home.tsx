@@ -21,7 +21,9 @@ function Home() {
       </Col>
       <Col xs={24} sm={24} md={10} className="banner-content">
         <Title className="banner-title">Anti Corruption</Title>
-        <Title level={3}>มุมมอง และ ความหมาย ของการทุตริต</Title>
+        <Title level={3} className="banner-subtitle">
+          ความหมาย ของการทุตริต
+        </Title>
         <Title level={4}>Chiangmai University</Title>
         <div style={{ padding: '24px 0' }}>
           <Button
