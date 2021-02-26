@@ -42,7 +42,7 @@ function Home() {
           <Button
             size="large"
             type="primary"
-            style={{ width: 180 }}
+            style={{ marginBottom: 6,width: 180 }}
             icon={<CommentOutlined />}
             onClick={() =>
               document
@@ -51,6 +51,20 @@ function Home() {
             }
           >
             แสดงความคิดเห็น
+          </Button>
+          <br />
+          <Button
+            size="large"
+            type="primary"
+            style={{ width: 180}}
+            icon={<CommentOutlined />}
+            onClick={() =>
+              document
+                .getElementById('vote')
+                ?.scrollIntoView({ behavior: 'smooth' })
+            }
+          >
+            โหวตคะแนน
           </Button>
         </div>
       </Col>

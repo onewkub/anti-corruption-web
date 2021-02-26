@@ -3,6 +3,7 @@ import './App.less'
 import HomeComponent from 'components/Home'
 import ContentComponent from 'components/Content'
 import AboutComponent from 'components/About'
+import VoteComponent from 'components/Vote'
 import Footer from 'components/Footer'
 import firebase from 'services/FirebaseService'
 import { Provider } from 'react-redux'
@@ -32,6 +33,7 @@ function App() {
       <ReactReduxFirebaseProvider {...rrfProps}>
         <div className="App">
           <HomeComponent />
+          <VoteComponent />
           <VideoContent />
           <ContentComponent />
           <AboutComponent />
