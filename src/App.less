@@ -75,38 +75,37 @@
   background-image: linear-gradient(@second-color, @third-color);
 }
 
-.App-Vote-content{
-
+.App-Vote-content {
   &:extend(.section);
   width: 100%;
   min-height: 100vh;
   text-align: center;
   background-image: linear-gradient(@second-color, @second-color);
-  flex-direction: column;
+  // flex-direction: column;
+  // display: flex;
+  // justify-content: center;
+}
+
+.vote-answer-box {
   display: flex;
   justify-content: center;
-
+  padding: 3rem 10vw;
 }
 
-.vote-answer-box{
-  display: flex;
-  justify-content: space-between;
-  padding: 3rem 20%;
-
-}
-
-.answer-btn{
+.answer-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 5rem;
-  height: 5rem;
+  margin: 0 1vw;
+  width: 7vh;
+  height: 7vh;
   border: solid rgb(110, 110, 110) 2px;
-  border-radius: 50%;
-  &:hover{
+  border-radius: 100%;
+  &:hover {
     background-color: rgba(255, 255, 255, 0.562);
     cursor: pointer;
   }
+
 }
 
 .App-Content .comment-card {
@@ -189,4 +188,20 @@
   background-color: @first-color;
   // color: white;
   text-align: center;
+}
+
+.stat-window {
+  padding: 5rem;
+  height: 80vh;
+  width: 100%;
+}
+
+.stat-container {
+  display: flex;
+}
+
+
+.question-container{
+  // height: 100%;
+  margin-top: 15%;
 }

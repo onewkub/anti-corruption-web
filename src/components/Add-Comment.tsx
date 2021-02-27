@@ -31,7 +31,7 @@ function AddComment() {
   const handleOnClick = async (_form: IMessage) => {
     try {
       let comment = { ..._form, created: new Date() }
-      console.log(comment)
+      // console.log(comment)
       const hash = await hashPassword(_form.deleteCode)
       comment = { ...comment, deleteCode: hash }
 
