@@ -1,7 +1,7 @@
 import Banner from 'assets/banner.png'
 import NotFoundImage from 'assets/not-found-image.jpg'
 import { Row, Col, Typography, Image, Button } from 'antd'
-import { CommentOutlined, VideoCameraOutlined } from '@ant-design/icons'
+import { CommentOutlined, VideoCameraOutlined, BarChartOutlined } from '@ant-design/icons'
 
 const { Title } = Typography
 
@@ -57,9 +57,8 @@ function Home() {
           <br />
           <Button
             size="large"
-            type="primary"
             style={{ width: 180}}
-            icon={<CommentOutlined />}
+            icon={<BarChartOutlined />}
             onClick={() =>
               document
                 .getElementById('vote')
