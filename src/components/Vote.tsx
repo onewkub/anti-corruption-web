@@ -78,7 +78,7 @@ const questions: IQuestion[] = [
       },
       {
         symbol: '😀',
-        description: 'ดีมาก',
+        description: 'ดี',
         answer: 5,
       },
     ],
