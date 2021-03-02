@@ -115,7 +115,7 @@ function Vote() {
       saveUserAnswer().then(() => {
         setAnswered(true)
         setIndex(-2)
-        setCookies('vote-answer-anti', userAnswer, { path: '/' })
+        setCookies('vote-answer-anti', userAnswer, { path: '/' , expires: new Date('2021-04-30')})
       })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
