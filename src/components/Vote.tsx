@@ -104,7 +104,7 @@ function Vote() {
     let oldAnswer = cookies['vote-answer-anti']
     if (oldAnswer) {
       setAnswered(true)
-      console.log(oldAnswer)
+      // console.log(oldAnswer)
       // setI
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -6,23 +6,23 @@ import { RootState } from 'store/reducers'
 
 const { Title } = Typography
 
-function VideoContent() {
+function VideoContentSecond() {
   const opts = {
     height: '100%',
     width: '100%',
   }
-  useFirestoreConnect<{ id: string }>(() => [
-    { collection: 'videos', doc: 'youtube_id_2' },
-  ])
+  // useFirestoreConnect<{ id: string }>(() => [
+  //   { collection: 'videos', doc: 'youtube_id_2' },
+  // ])
   const youtube_id: string = useSelector((state: RootState) => {
-    // console.log(state.firestore.data.videos?.youtube_id.id)
-    return state.firestore.data.videos?.youtube_id_2.id
+    // console.log(state.firestore.data.videos?.youtube_id_2.id)
+    return state.firestore.data.videos?.youtube_id_2.id || "Gc1_pVqoWYo"
     // return 'abc'
   })
 
   if (!isLoaded(youtube_id)) {
     return (
-      <div className="App-Video-content" id="video">
+      <div className="App-Video-content-2" id="video">
         <Title>Loading...</Title>
       </div>
     )
@@ -35,11 +35,11 @@ function VideoContent() {
       </Title>
       <div className="video-box">
         <div className="video-sub-box">
-          <YouTube className="video-player" videoId={youtube_id} opts={opts} />
+          <YouTube className="video-player" videoId={"Gc1_pVqoWYo"} opts={opts} />
         </div>
       </div>
     </div>
   )
 }
 
-export default VideoContent
+export default VideoContentSecond

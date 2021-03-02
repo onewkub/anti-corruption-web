@@ -68,7 +68,7 @@ function Stat() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [question])
 
-  console.log(question)
+  // console.log(question)
 
   defaults.global.defaultFontFamily = "'Kanit', sans-serif"
   defaults.global.defaultFontSize = 16

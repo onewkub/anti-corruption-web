@@ -12,11 +12,11 @@ function VideoContent() {
     width: '100%',
   }
   useFirestoreConnect<{ id: string }>(() => [
-    { collection: 'videos', doc: 'youtube_id' },
+    { collection: 'videos' },
   ])
   const youtube_id: string = useSelector((state: RootState) => {
-    // console.log(state.firestore.data.videos?.youtube_id.id)
-    return state.firestore.data.videos?.youtube_id.id
+    // console.log(state.firestore.data)
+    return state.firestore.data.videos?.youtube_id.id || "Gc1_pVqoWYo"
     // return 'abc'
   })
 
