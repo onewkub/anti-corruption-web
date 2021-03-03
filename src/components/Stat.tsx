@@ -124,6 +124,38 @@ function Stat() {
     },
     legend: false,
   }
+  const options_2 = {
+    fontFamily: "'Kanit', sans-serif",
+    responsive: true,
+    scales: {
+      xAxes: [
+        {
+          gridLines: false,
+          ticks: {
+            padding: 8,
+            fontColor: 'black',
+          },
+        },
+      ],
+      yAxes: [
+        {
+          gridLines: false,
+          ticks: {
+            display: false,
+            stepSize: 1,
+            beginAtZero: true,
+          },
+        },
+      ],
+    },
+    title: {
+      display: true,
+      text: 'คุณคิดว่ารัฐบาลชุดนี้ทำงานได้ดีหรือไม่',
+      fontColor: 'black',
+      fontSize: 24,
+    },
+    legend: false,
+  }
   if (!isLoaded(question)) {
     return <Spin />
   }
@@ -144,7 +176,7 @@ function Stat() {
         <Col xs={24} sm={24} lg={12}>
           <Bar
             data={data_2}
-            options={options}
+            options={options_2}
             plugins={[ChartDataLabels]}
           ></Bar>
         </Col>
