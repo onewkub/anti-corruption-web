@@ -1,6 +1,6 @@
 import { Typography } from 'antd'
 import { useSelector } from 'react-redux'
-import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
+import { isLoaded } from 'react-redux-firebase'
 import YouTube from 'react-youtube'
 import { RootState } from 'store/reducers'
 
