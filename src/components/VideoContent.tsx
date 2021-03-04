@@ -16,8 +16,7 @@ function VideoContent() {
   ])
   const youtube_id: string = useSelector((state: RootState) => {
     // console.log(state.firestore.data)
-    return state.firestore.data.videos?.youtube_id.id || "Gc1_pVqoWYo"
-    // return 'abc'
+    return state.firestore.data.videos?.youtube_id.id
   })
 
   if (!isLoaded(youtube_id)) {

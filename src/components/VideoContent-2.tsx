@@ -15,8 +15,8 @@ function VideoContentSecond() {
   //   { collection: 'videos', doc: 'youtube_id_2' },
   // ])
   const youtube_id: string = useSelector((state: RootState) => {
-    // console.log(state.firestore.data.videos?.youtube_id_2.id)
-    return state.firestore.data.videos?.youtube_id_2.id || "Gc1_pVqoWYo"
+    console.log(state.firestore.data.videos?.youtube_id_2.id)
+    return state.firestore.data.videos?.youtube_id_2.id
     // return 'abc'
   })
 
@@ -35,7 +35,7 @@ function VideoContentSecond() {
       </Title>
       <div className="video-box">
         <div className="video-sub-box">
-          <YouTube className="video-player" videoId={"Gc1_pVqoWYo"} opts={opts} />
+          <YouTube className="video-player" videoId={youtube_id} opts={opts} />
         </div>
       </div>
     </div>
